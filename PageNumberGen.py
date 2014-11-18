@@ -9,6 +9,8 @@ class PageNumberGen:
     def get_linear(self, currentpage):
         pages = []
         pagesleft = self.displayedpages
+        if self.minpage == self.maxpage:
+            return [self.minpage]
         if self.showmin:
             pages.append(self.minpage)
             pagesleft -= 1
