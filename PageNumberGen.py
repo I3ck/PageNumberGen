@@ -17,7 +17,9 @@ class PageNumberGen:
             pagesleft -= 1
 
         for i in range(pagesleft):
-            output.append(currentpage - pagesleft/2 + i)
+            page = currentpage - pagesleft/2 + i
+            if minpage <= page <= maxpage:
+                output.append(page)
 
         if self.showmax:
             output.append(self.maxpage)
@@ -26,7 +28,7 @@ class PageNumberGen:
 
 if __name__ == "__main__":
     minpage = 0
-    maxpage = 100
+    maxpage = 30
     displayedpages = 10
     test = PageNumberGen(minpage, maxpage, displayedpages)
     print test.get_linear(13)
