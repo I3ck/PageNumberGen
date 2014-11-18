@@ -18,7 +18,14 @@ class PageNumberGen:
 
         for i in range(pagesleft):
             page = currentpage - pagesleft/2 + i
-            if self.minpage <= page <= self.maxpage:
+            start = self.minpage
+            end = self.maxpage
+            if self.showmin:
+                start += 1
+            if self.showmax:
+                end -= 1
+
+            if start <= page <= end:
                 pages.append(page)
 
         if self.showmax:
