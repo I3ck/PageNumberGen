@@ -25,8 +25,14 @@ class PageNumberGen:
         return output
 
 if __name__ == "__main__":
-    test = PageNumberGen(0, 100, 10)
+    minpage = 0
+    maxpage = 100
+    displayedpages = 10
+    test = PageNumberGen(minpage, maxpage, displayedpages)
     print test.get_linear(13)
+
+    test2 = PageNumberGen(minpage, maxpage, displayedpages, False, False)
+    print test2.get_linear(13)
 
 
 
