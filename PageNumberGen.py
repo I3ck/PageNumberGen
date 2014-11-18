@@ -7,10 +7,10 @@ class PageNumberGen:
         self.showmax = showmax
 
     def get_linear(self, currentpage):
-        output = []
+        pages = []
         pagesleft = self.displayedpages
         if self.showmin:
-            output.append(self.minpage)
+            pages.append(self.minpage)
             pagesleft -= 1
 
         if self.showmax:
@@ -19,12 +19,12 @@ class PageNumberGen:
         for i in range(pagesleft):
             page = currentpage - pagesleft/2 + i
             if minpage <= page <= maxpage:
-                output.append(page)
+                pages.append(page)
 
         if self.showmax:
-            output.append(self.maxpage)
+            pages.append(self.maxpage)
 
-        return output
+        return pages
 
 if __name__ == "__main__":
     minpage = 0
